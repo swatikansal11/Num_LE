@@ -1,0 +1,118 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled1.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMLQmifB/mY834yUnyQGsGm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/swatikansal11/Num_LE/blob/main/Broadcasting_Concepts\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "jq-E2NNTEkfa"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 10,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lQb2nnVdEcqy",
+        "outputId": "ec8fa1e8-61ca-4a00-d163-46b9eb855ae7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[1 2 3 4]\n",
+            "[1 2 3 4]\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 2,  4,  6,  8],\n",
+              "       [ 6,  8, 10, 12],\n",
+              "       [10, 12, 14, 16]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 10
+        }
+      ],
+      "source": [
+        "M = np.array([[1, 2, 3, 4],\n",
+        "              [5, 6, 7, 8],\n",
+        "              [9, 10, 11, 12]])\n",
+        "b = np.array([1, 2, 3, 4])\n",
+        "print(b)\n",
+        "#b = np.expand_dims(b, axis = 1)\n",
+        "print(b)\n",
+        "M + b"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "M = np.array([[1, 2, 3, 4],\n",
+        "              [5, 6, 7, 8],\n",
+        "              [9, 10, 11, 12]])\n",
+        "b = np.array([1, 2, 3])\n",
+        "b = np.expand_dims(b, axis = 1)\n",
+        "M + b"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Tpi5afYEEjM2",
+        "outputId": "872980f6-ddae-458c-a428-04c04804de6b"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 2,  3,  4,  5],\n",
+              "       [ 7,  8,  9, 10],\n",
+              "       [12, 13, 14, 15]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 14
+        }
+      ]
+    }
+  ]
+}
